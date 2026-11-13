@@ -1,0 +1,237 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0d1016"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" href="./icon-192.png"><title>GIG TIMER 4.0</title><style>
+:root{font-family:system-ui,-apple-system,Arial,sans-serif;color:#f4f6fa;background:#0d1016}*{box-sizing:border-box}body{margin:0;min-height:100dvh;text-transform:uppercase}button,input{font:inherit}button{border:0;border-radius:12px;background:#303948;color:#fff;padding:13px 15px;font-weight:800;cursor:pointer;min-height:46px}button:active{filter:brightness(1.3)}button:disabled{opacity:.35}.primary{background:#2fc47c;color:#06180f}.danger{background:#70343d}.ghost{background:#202734}.wrap{max-width:860px;margin:auto;padding:16px}.header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}.header h1{font-size:1.35rem;margin:0}.tabs,.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tabs button.active{background:#2fc47c;color:#08170f}.card{background:#1a202a;border:1px solid #36404e;border-radius:15px;padding:14px;margin:10px 0}.muted{color:#aebaca}.small{font-size:.83rem}.line{display:flex;align-items:center;gap:8px}.line>*{min-width:0}.between{justify-content:space-between}.grow{flex:1}.field{width:100%;background:#10151e;border:1px solid #4a5666;color:white;border-radius:10px;padding:13px;min-height:48px;text-transform:uppercase}.field:focus{outline:2px solid #2fc47c}.library-entry{grid-template-columns:34px minmax(0,1fr) 91px auto!important}.library-number{font-weight:900;color:#7fe3b0;text-align:left}.entry{display:grid;grid-template-columns:minmax(0,1fr) 91px auto;gap:7px;align-items:center;margin:8px 0}.entry .field{padding:10px}.entry button{padding:10px;min-width:42px}.time{text-align:center;font-variant-numeric:tabular-nums}.tag{display:inline-block;border:1px solid #556273;border-radius:8px;padding:4px 7px;color:#c4d0df;font-size:.72rem}.title{font-weight:800;font-size:1.12rem;overflow-wrap:anywhere}.empty{padding:20px;text-align:center;color:#b7c1d0}.list-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.list-actions button{min-width:40px}.hidden{display:none!important}.summary{font-weight:900;font-size:1.5rem;color:#71e7aa;font-variant-numeric:tabular-nums}.pick{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #35404c}.pick:last-child{border:0}.hint{line-height:1.5}.stage{height:100dvh;min-height:420px;padding:12px;display:none;flex-direction:column;gap:9px;overflow:hidden}.stage.on{display:flex}.stage-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:0 0 auto}.stage-top button{font-size:.82rem;padding:9px;min-height:38px}.stage-top .meta{text-align:right;font-size:.76rem;color:#c0cbd9;font-variant-numeric:tabular-nums}.stage-content{display:flex;flex-direction:column;flex:1;min-height:0}.stage-main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:5px}.stage-name{font-size:clamp(2.8rem,12vw,8rem);font-weight:950;line-height:1.02;letter-spacing:-.035em;overflow-wrap:anywhere;width:100%;max-height:36%;overflow:auto}.stage-time{font-size:clamp(5rem,24vw,15rem);font-weight:950;line-height:1;letter-spacing:-.07em;font-variant-numeric:tabular-nums;white-space:nowrap}.stage-time.over{color:#ff7b82}.stage-sub{color:#aebaca;font-size:.82rem}.stage-footer{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}.stage-total{text-align:center;font-size:clamp(1.15rem,5vw,2rem);font-weight:900;color:#76e7ac;font-variant-numeric:tabular-nums}.queue{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:3px 0 6px}.queue-item{flex:0 0 auto;max-width:180px;min-width:105px;padding:9px 12px;background:#242c38;border-radius:10px;font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.queue-item.current{background:#2fc47c;color:#091a10;font-weight:900}.next-button{width:100%;min-height:76px;font-size:clamp(1.3rem,5vw,2rem)}.progress{height:5px;background:#333d49;border-radius:5px;overflow:hidden}.progress div{height:100%;background:#2fc47c;transition:width .2s}#editorTitle{margin:5px 0}#songPicker{max-height:42dvh;overflow:auto}#stageEvent{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
+@media(orientation:landscape){.stage{padding:7px 12px;gap:5px;min-height:0}.stage-top{height:32px}.stage-top button{min-height:30px;padding:5px 9px}.stage-content{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,29%);gap:12px}.stage-main{min-width:0}.stage-name{font-size:clamp(2rem,6.5vw,6rem);max-height:35%}.stage-time{font-size:clamp(3.5rem,13vw,11rem)}.stage-footer{justify-content:center;min-height:0}.stage-total{font-size:clamp(1rem,2.8vw,1.8rem)}.queue{flex-direction:column;overflow-y:auto;overflow-x:hidden;min-height:0;flex:1}.queue-item{max-width:none;min-width:0;padding:6px 8px;font-size:.7rem}.next-button{min-height:58px;font-size:1.3rem}.stage-sub{font-size:.68rem}}
+@media(max-height:390px) and (orientation:landscape){.stage-name{font-size:clamp(1.7rem,5vw,3.8rem)}.stage-time{font-size:clamp(3.2rem,11vw,6.5rem)}.stage-footer{gap:3px}.next-button{min-height:46px}.stage-top{height:26px}}
+
+.preview-row{display:grid;grid-template-columns:32px minmax(0,1fr) 60px 65px;gap:8px;align-items:center;border-bottom:1px solid #34404d;padding:12px 2px;font-size:clamp(.86rem,3.7vw,1.12rem)}.preview-row:last-child{border:0}.preview-row.break{color:#b3bfcc;font-style:italic}.preview-num{color:#7fe3b0;font-weight:900}.preview-name{font-weight:800;overflow-wrap:anywhere}.preview-duration,.preview-cumulative{text-align:right;font-variant-numeric:tabular-nums}.preview-cumulative{color:#7fe3b0;font-weight:800}#previewRows{margin-top:12px}.stage-name{max-width:100%}@media(orientation:portrait){.stage-main{justify-content:center}.stage-footer{margin-top:auto}.stage-name{max-height:45%}.stage-time{font-size:min(24vw,16vh)}}@media(orientation:landscape){.stage-content{display:grid}.stage-main{justify-content:center}.stage-name{max-height:55%}.stage-time{font-size:min(13vw,33vh)}}@media(max-width:440px){.list-actions button{padding:9px 10px;font-size:.78rem}.preview-row{grid-template-columns:25px minmax(0,1fr) 51px 56px;gap:5px}}
+
+/* V3.1: STAGE TYPOGRAPHY AND TOUCH CONTROLS */
+.stage-main{cursor:pointer;touch-action:manipulation;user-select:none;gap:1px}
+.stage-name{font-size:clamp(3.2rem,17vw,12rem);max-height:48%;line-height:.98;overflow-wrap:anywhere}
+.stage-time{font-size:clamp(5.5rem,28vw,20rem);line-height:.94}
+.stage-sub{font-size:clamp(.88rem,2.7vw,1.1rem);font-weight:700}
+.stage-footer{gap:10px}.queue-item{font-size:clamp(1.1rem,4vw,1.5rem);padding:15px 18px;min-width:185px;max-width:290px}
+.stage-total{font-size:clamp(1.5rem,6vw,2.7rem)}
+.stage-main:focus-visible{outline:3px solid #2fc47c;border-radius:12px}
+@media(orientation:portrait){.stage-main{flex:1}.stage-name{font-size:clamp(3.1rem,16vw,11rem);max-height:48%}.stage-time{font-size:min(28vw,18vh)}.stage-footer{margin-top:auto}.queue{min-height:85px}.queue-item{font-size:clamp(1.1rem,4.8vw,1.5rem);min-width:185px;padding:18px}}
+@media(orientation:landscape){.stage-content{grid-template-columns:minmax(0,1fr) minmax(175px,30%);gap:9px}.stage-name{font-size:min(9vw,22vh);max-height:55%}.stage-time{font-size:min(17vw,40vh)}.stage-sub{font-size:clamp(.7rem,1.5vw,.95rem)}.queue-item{font-size:clamp(1rem,2.5vw,1.5rem);padding:10px 8px;white-space:normal;min-width:0;max-width:none}.stage-footer{gap:5px}.stage-total{font-size:clamp(1rem,2.8vw,1.8rem)}.next-button{min-height:52px}}
+@media(orientation:landscape) and (max-height:400px){.stage-name{font-size:min(8vw,19vh)}.stage-time{font-size:min(15vw,35vh)}.stage-top{height:25px}.stage{gap:3px}.queue-item{padding:6px 8px;font-size:clamp(.95rem,2vw,1.15rem)}.stage-sub{font-size:.7rem}}
+/* V3.2: HIGH-VISIBILITY PAUSE INDICATOR */
+.stage-main{position:relative;border-radius:18px;transition:background .12s}
+.stage.paused .stage-main{background:rgba(255,177,47,.14);outline:4px solid #ffb12f;outline-offset:-4px}
+.stage.paused .stage-name,.stage.paused .stage-time{color:#ffca65}
+.stage.paused #tapHint{background:#ffb12f;color:#211400;font-size:clamp(1.15rem,4vw,1.7rem);padding:9px 16px;border-radius:12px;font-weight:950}
+.pause-overlay{display:none;position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font-size:clamp(5rem,19vw,11rem);font-weight:1000;line-height:1;color:#ffb12f;text-shadow:0 3px 16px #0d1016;pointer-events:none;z-index:2}
+.stage.paused .pause-overlay{display:block}
+@media(orientation:landscape){.pause-overlay{font-size:min(15vw,35vh)}}
+
+/* V3.3: LARGER, READABLE LIVE HEADER */
+.stage-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1.2fr);align-items:center;gap:8px;min-height:70px;height:auto}
+.stage-top button{font-size:clamp(1.15rem,3.7vw,1.6rem);min-height:56px;padding:10px 8px;line-height:1.1}
+#stageEvent{max-width:none;min-width:0;text-align:center;font-size:clamp(1.1rem,4vw,1.85rem);font-weight:900;white-space:normal;overflow-wrap:anywhere;line-height:1.1}
+.stage-top .meta{font-size:clamp(1.15rem,4.3vw,1.9rem);font-weight:950;color:#e4f8ef;line-height:1.12;white-space:normal;text-align:right}
+@media(orientation:landscape){.stage-top{min-height:47px;height:auto;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1.2fr);gap:6px}.stage-top button{min-height:39px;font-size:clamp(.95rem,2.7vw,1.4rem);padding:5px 7px}#stageEvent{font-size:clamp(1rem,3vw,1.6rem)}.stage-top .meta{font-size:clamp(1rem,3.2vw,1.65rem)}}
+@media(orientation:landscape) and (max-height:400px){.stage-top{min-height:37px;height:auto}.stage-top button{min-height:33px;font-size:clamp(.85rem,2.5vw,1.15rem)}#stageEvent{font-size:clamp(.9rem,2.7vw,1.35rem)}.stage-top .meta{font-size:clamp(.9rem,2.9vw,1.4rem)}}
+.backup-menu{margin:4px 0 12px}.backup-menu summary{display:inline-flex;align-items:center;gap:8px;list-style:none;cursor:pointer;background:#202734;border:1px solid #36404e;border-radius:10px;padding:9px 13px;font-size:.8rem;font-weight:850;min-height:40px;user-select:none}.backup-menu summary::-webkit-details-marker{display:none}.backup-menu[open] .backup-chevron{transform:rotate(180deg)}.backup-menu .backup-panel{margin-top:8px}.backup-menu .actions button{flex:1;min-width:165px}
+/* V3.6: CLICKABLE FULL SETLIST NAVIGATION */
+.queue-item{cursor:pointer;border:2px solid transparent;touch-action:pan-x;user-select:none}
+.queue-item.current{border-color:#eafff3}
+.queue-item:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(orientation:landscape){.queue-item{touch-action:pan-y}}
+/* V3.8: SUBTLE WAKE LOCK INDICATOR */
+.wake-status{position:absolute;right:13px;bottom:5px;font-size:clamp(.7rem,2vw,.9rem);font-weight:850;letter-spacing:.03em;color:#b7c1d0;pointer-events:none}
+.wake-status.ok{color:#7fe3b0}.wake-status.fail{color:#ffca65}
+.stage-top{position:relative;padding-bottom:18px}
+@media(orientation:landscape){.stage-top{padding-bottom:13px}.wake-status{bottom:0;font-size:.7rem}}
+</style></head><body><div class="wrap" id="app"><div class="header"><h1>🎸 GIG TIMER</h1><span class="tag">V4.0 • PWA • OFFLINE</span></div><nav class="tabs"><button id="tabLibrary" class="active">KNIŽNICA SKLADIEB</button><button id="tabShows">KONCERTY / SETLISTY</button></nav><details class="backup-menu" id="backupMenu"><summary>☁ ZÁLOHA <span class="backup-chevron">▾</span></summary><div class="card backup-panel"><strong>💾 ZÁLOHA A OBNOVA</strong><p class="muted small">ULOŽ VŠETKY SKLADBY A SETLISTY DO JEDNÉHO SÚBORU. PRI OBNOVE SA NAHRADIA EXISTUJÚCE ÚDAJE.</p><div class="actions"><button class="primary" id="exportBackup">↓ EXPORT ZÁLOHY</button><button id="importBackup">↑ IMPORT ZÁLOHY</button><input type="file" id="backupFile" accept=".json,application/json" hidden></div><p class="muted small" id="backupStatus" role="status"></p><p class="muted small">PRE ZÁLOHU NA GOOGLE DISK: EXPORTUJ SÚBOR A ULOŽ HO NA DISK CEZ ZDIEĽANIE ALEBO APLIKÁCIU GOOGLE DISK. AUTOMATICKÁ SYNCHRONIZÁCIA ZATIAĽ NIE JE K DISPOZÍCII.</p></div></details><section id="libraryView"><p class="muted small hint">SKLADBU PRIDAJ LEN RAZ. POTOM JU MÔŽEŠ POUŽIŤ V ĽUBOVOĽNOM POČTE KONCERTOV.</p><div id="libraryRows"></div><div class="actions"><button class="primary" id="newSong">+ NOVÁ SKLADBA</button></div></section><section id="showsView" class="hidden"><div class="actions"><button class="primary" id="newShow">+ VYTVORIŤ PLAYLIST NA KONCERT</button></div><div id="showRows"></div></section><section id="previewView" class="hidden"><div class="line between"><button id="previewBack">← KONCERTY</button><span class="tag">NÁHĽAD SETLISTU</span></div><h2 id="previewTitle"></h2><p id="previewPlace" class="muted"></p><div class="card"><div class="line between"><strong>PORADIE SKLADIEB</strong><span id="previewTotal" class="summary"></span></div><div id="previewRows"></div></div><button class="primary" id="previewStart" style="width:100%;min-height:65px">▶ SPUSTIŤ KONCERT</button></section><section id="editorView" class="hidden"><div class="line between"><button id="editorBack">← KONCERTY</button><span class="tag">EDITOR SETLISTU</span></div><h2 id="editorTitle">KONCERT</h2><div class="card"><label class="small muted" for="showName">NÁZOV AKCIE</label><input class="field" id="showName" placeholder="NAPR. ROCK FEST"><label class="small muted" for="showPlace" style="display:block;margin-top:10px">LOKALITA</label><input class="field" id="showPlace" placeholder="NAPR. KOŠICE"></div><div class="card"><div class="line between"><strong>PORADIE V SETLISTE</strong><span id="editorTotal" class="summary">0:00</span></div><div id="setRows"></div><div class="actions"><button id="openPicker">+ VYBRAŤ SKLADBY</button><button id="addBreak">+ PRESTÁVKA</button></div></div><div class="actions"><button id="startShow" class="primary">▶ SPUSTIŤ KONCERT</button><button id="duplicateShow">DUPLIKOVAŤ SETLIST</button></div><p class="muted small hint">ČASY SKLADIEB SA PREBERAJÚ Z KNIŽNICE. V SETLISTE ICH MÔŽEŠ UPRAVIŤ BEZ ZMENY KNIŽNICE. TLAČIDLÁ ↑ ↓ MENIA PORADIE.</p></section><section id="pickerView" class="hidden"><button id="pickerBack">← SPÄŤ DO SETLISTU</button><h2>VYBRAŤ SKLADBY</h2><input id="pickerSearch" class="field" placeholder="HĽADAŤ SKLADBU"><div class="card" id="songPicker"></div><div class="actions"><button class="primary" id="pickerDone">HOTOVO ✓</button></div></section></div><section class="stage" id="stage"><div class="stage-top"><button id="exitStage" class="ghost">✕ UKONČIŤ</button><span id="stageEvent" class="small muted"></span><span class="meta" id="realTime">REÁLNE 0:00</span><span id="wakeStatus" class="wake-status" role="status">DISPLEJ: ČAKÁ</span></div><div class="stage-content"><div class="stage-main" id="stageTap" role="button" tabindex="0" aria-label="SPUSTIŤ ALEBO POZASTAVIŤ ČASOVAČ"><div class="stage-name" id="currentName"></div><div class="pause-overlay" aria-hidden="true">Ⅱ</div><div class="stage-sub" id="tapHint">KLEPNI NA NÁZOV ALEBO ČAS PRE ŠTART</div><div class="stage-time" id="currentTimer">0:00</div><div class="stage-sub" id="stagePosition"></div></div><div class="stage-footer"><div class="stage-total">SETLIST ZOSTÁVA <span id="stageRemaining">0:00</span></div><div class="progress"><div id="stageBar"></div></div><div class="queue" id="stageQueue"></div><button class="primary next-button" id="nextStage">ĎALŠIA →</button></div></div></section><script>
+(()=>{'use strict';const KEY='koncertny_timer_v2',OLD='koncertny_timer_v1';const $=id=>document.getElementById(id);const uid=()=>String(Date.now())+Math.random().toString(36).slice(2,9);const upper=s=>String(s||'').toLocaleUpperCase('sk-SK');const fmt=s=>{let negative=s<0;s=Math.floor(Math.abs(s));return(negative?'-':'')+Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};const fieldTime=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');const parseTime=s=>{const digits=String(s).replace(/\D/g,'');if(digits.length!==4)return null;const mm=+digits.slice(0,2),ss=+digits.slice(2);return ss<60?mm*60+ss:null};const safeSeconds=s=>Math.max(0,Math.floor(Number(s)||0));let db={songs:[],shows:[]},activeShow=null,view='library',run=null,ticker=null;
+try{const raw=JSON.parse(localStorage.getItem(KEY));if(raw&&Array.isArray(raw.songs)&&Array.isArray(raw.shows))db=raw;else{const old=JSON.parse(localStorage.getItem(OLD));if(old&&Array.isArray(old.items)&&old.items.length){let songItems=[],showItems=[];old.items.forEach(it=>{const name=upper(it.name),sec=safeSeconds(it.sec);if(name.includes('PRESTÁVKA'))showItems.push({id:uid(),kind:'break',name:name||'PRESTÁVKA',sec});else{let id=uid();songItems.push({id,name,sec});showItems.push({id:uid(),kind:'song',songId:id,name,sec})}});db.songs=songItems;db.shows=[{id:uid(),name:'IMPORTOVANÝ SETLIST',place:'',items:showItems}]}}}catch(e){}function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){alert('NEPODARILO SA ULOŽIŤ DÁTA. SKONTROLUJ ÚLOŽISKO PREHLIADAČA.')}}function el(tag,cls,txt){let e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}function btn(label,fn,cls=''){let b=el('button',cls,label);b.onclick=fn;return b}function textInput(value,placeholder,cb){let e=el('input','field');e.value=upper(value);e.placeholder=placeholder;e.autocapitalize='characters';e.onfocus=()=>{if(e.value)e.select()};e.oninput=()=>{let p=e.selectionStart;e.value=upper(e.value);try{e.setSelectionRange(p,p)}catch(_){}cb(e.value)};return e}function timeInput(sec,cb){let e=el('input','field time');e.value=fieldTime(sec);e.inputMode='numeric';e.maxLength=5;e.onfocus=()=>{e.value='';e.placeholder='MMSS'};e.oninput=()=>{let d=e.value.replace(/\D/g,'').slice(0,4);e.value=d.length===4?d.slice(0,2)+':'+d.slice(2):d};e.onblur=()=>{let s=parseTime(e.value);if(s===null)e.value=fieldTime(sec);else{cb(s);sec=s;e.value=fieldTime(s)}};return e}function total(show){return(show?.items||[]).reduce((n,i)=>n+safeSeconds(i.sec),0)}function show(){return db.shows.find(x=>x.id===activeShow)}function page(name){view=name;['library','shows','preview','editor','picker'].forEach(v=>$(v+'View').classList.toggle('hidden',v!==name));$('tabLibrary').classList.toggle('active',name==='library');$('tabShows').classList.toggle('active',name!=='library');if(name==='library')renderLibrary();if(name==='shows')renderShows();if(name==='editor')renderEditor();if(name==='preview')renderPreview();if(name==='picker')renderPicker();window.scrollTo(0,0)}$('tabLibrary').onclick=()=>page('library');$('tabShows').onclick=()=>page('shows');
+function renderLibrary(focusId){let root=$('libraryRows');root.replaceChildren();if(!db.songs.length)root.append(el('div','empty','ZATIAĽ NEMÁŠ ŽIADNE SKLADBY.'));[...db.songs].sort((a,b)=>upper(a.name).localeCompare(upper(b.name),'sk')).forEach((s,i)=>{let row=el('div','entry library-entry');row.append(el('span','library-number',(i+1)+'.'));let name=textInput(s.name,'NÁZOV SKLADBY',v=>{s.name=v;save()});name.dataset.songid=s.id;name.addEventListener('blur',()=>{if(!focusId)renderLibrary()});let time=timeInput(s.sec,v=>{s.sec=v;save()});row.append(name,time,btn('✕',()=>{if(!confirm('ODSTRÁNIŤ SKLADBU Z KNIŽNICE? V EXISTUJÚCICH SETLISTOCH ZOSTANE.'))return;db.songs=db.songs.filter(x=>x.id!==s.id);save();renderLibrary()},'danger'));root.append(row)});if(focusId){let input=[...root.querySelectorAll('input')].find(x=>x.dataset.songid===focusId);input?.focus()}}$('newSong').onclick=()=>{let s={id:uid(),name:'',sec:240};db.songs.push(s);save();renderLibrary(s.id)};
+function renderShows(){let root=$('showRows');root.replaceChildren();if(!db.shows.length)root.append(el('div','empty','ZATIAĽ NEMÁŠ ULOŽENÝ KONCERT.'));db.shows.forEach(s=>{let card=el('div','card');let h=el('div','line between');let info=el('div','grow');info.append(el('div','title',s.name||'BEZ NÁZVU'),el('div','muted small',(s.place||'BEZ LOKALITY')+' • '+s.items.length+' POLOŽIEK • '+fmt(total(s))));h.append(info);let showButtons=el('div','list-actions');showButtons.append(btn('OTVORIŤ',()=>{activeShow=s.id;page('preview')},'primary'),btn('EDITOVAŤ',()=>{activeShow=s.id;page('editor')}));h.append(showButtons);card.append(h);let actions=el('div','actions');actions.append(btn('KOPÍROVAŤ',()=>duplicate(s)),btn('VYMAZAŤ',()=>{if(!confirm('VYMAZAŤ TENTO KONCERT?'))return;db.shows=db.shows.filter(x=>x.id!==s.id);save();renderShows()},'danger'));card.append(actions);root.append(card)})}function renderPreview(){let s=show();if(!s)return page('shows');$('previewTitle').textContent=s.name||'KONCERT';$('previewPlace').textContent=s.place||'';$('previewTotal').textContent=fmt(total(s));let root=$('previewRows');root.replaceChildren();let elapsed=0,n=0;if(!s.items.length)root.append(el('div','empty','SETLIST JE PRÁZDNY.'));s.items.forEach(it=>{elapsed+=safeSeconds(it.sec);let row=el('div','preview-row'+(it.kind==='break'?' break':''));let num=it.kind==='break'?'':(++n)+'.';row.append(el('span','preview-num',num),el('span','preview-name',it.name||'BEZ NÁZVU'),el('span','preview-duration',fmt(it.sec)),el('span','preview-cumulative',fmt(elapsed)));root.append(row)});} $('previewBack').onclick=()=>page('shows');$('previewStart').onclick=()=>startConcert();
+function duplicate(s){let copy={id:uid(),name:(s.name||'KONCERT')+' KÓPIA',place:s.place,items:s.items.map(x=>({...x,id:uid()}))};db.shows.push(copy);save();activeShow=copy.id;page('editor')}$('newShow').onclick=()=>{let s={id:uid(),name:'',place:'',items:[]};db.shows.push(s);save();activeShow=s.id;page('editor');$('showName').focus()};
+function renderEditor(){let s=show();if(!s)return page('shows');$('editorTitle').textContent=s.name||'NOVÝ KONCERT';$('showName').value=s.name;$('showPlace').value=s.place;$('editorTotal').textContent=fmt(total(s));let root=$('setRows');root.replaceChildren();if(!s.items.length)root.append(el('div','empty','PRIDAJ SKLADBY ALEBO PRESTÁVKY.'));s.items.forEach((it,i)=>{let card=el('div','card');let heading=el('div','line between');heading.append(el('span','tag',(i+1)+'. '+(it.kind==='break'?'PRESTÁVKA':'SKLADBA')));let acts=el('div','list-actions');acts.append(btn('↑',()=>move(i,-1)),btn('↓',()=>move(i,1)),btn('✕',()=>{s.items.splice(i,1);save();renderEditor()},'danger'));acts.children[0].disabled=i===0;acts.children[1].disabled=i===s.items.length-1;heading.append(acts);let row=el('div','entry');row.style.gridTemplateColumns='minmax(0,1fr) 95px';row.append(textInput(it.name,it.kind==='break'?'PRESTÁVKA':'NÁZOV',v=>{it.name=v;save()}),timeInput(it.sec,v=>{it.sec=v;save();$('editorTotal').textContent=fmt(total(s))}));card.append(heading,row);root.append(card)})}function move(i,step){let s=show(),j=i+step;if(j<0||j>=s.items.length)return;[s.items[i],s.items[j]]=[s.items[j],s.items[i]];save();renderEditor()}$('showName').oninput=e=>{let s=show();if(!s)return;s.name=upper(e.target.value);e.target.value=s.name;$('editorTitle').textContent=s.name||'NOVÝ KONCERT';save()};$('showPlace').oninput=e=>{let s=show();if(!s)return;s.place=upper(e.target.value);e.target.value=s.place;save()};$('editorBack').onclick=()=>page('shows');$('openPicker').onclick=()=>page('picker');$('addBreak').onclick=()=>{let s=show();s.items.push({id:uid(),kind:'break',name:'PRESTÁVKA',sec:30});save();renderEditor();$('setRows').lastElementChild?.scrollIntoView({block:'nearest',behavior:'smooth'})};$('duplicateShow').onclick=()=>duplicate(show());
+function renderPicker(){let root=$('songPicker');root.replaceChildren();let q=upper($('pickerSearch').value);let matches=db.songs.filter(s=>upper(s.name).includes(q));if(!matches.length)root.append(el('div','empty','ŽIADNE SKLADBY. PRIDAJ ICH V KNIŽNICI.'));matches.forEach(song=>{let row=el('div','pick');let info=el('div');info.append(el('div','title',song.name||'BEZ NÁZVU'),el('div','muted small',fmt(song.sec)));row.append(info,btn('+ PRIDAŤ',()=>{let s=show();s.items.push({id:uid(),kind:'song',songId:song.id,name:song.name,sec:song.sec});save();let b=row.querySelector('button');b.textContent='✓ PRIDANÉ';setTimeout(()=>{if(b.isConnected)b.textContent='+ PRIDAŤ'},650)},'primary'));root.append(row)})}$('pickerSearch').oninput=renderPicker;$('pickerBack').onclick=$('pickerDone').onclick=()=>{$('pickerSearch').value='';page('editor')};
+function advanceAutomatically(now){
+ if(!run||run.state!=='running')return;
+ let items=run.show.items;
+ // Preserve elapsed overflow so a delayed browser tick does not lose time.
+ while(run.idx<items.length && now-run.itemStart>=safeSeconds(items[run.idx].sec)*1000){
+   run.itemStart+=safeSeconds(items[run.idx].sec)*1000;
+   run.idx++;run.renderedIdx=-1;
+ }
+ if(run.idx>=items.length){run.state='done';run.endedAt=now;}
+}
+function toggleStage(){
+ if(!run||run.state==='done')return;
+ const now=performance.now();
+ if(run.state==='ready'){
+   run.state='running';run.start=now;run.itemStart=now;
+ }else if(run.state==='running'){
+   advanceAutomatically(now);
+   if(run.state==='running'){run.state='paused';run.pausedAt=now;}
+ }else if(run.state==='paused'){
+   const pauseLength=now-run.pausedAt;
+   run.start+=pauseLength;run.itemStart+=pauseLength;run.state='running';
+ }
+ tick();
+}
+function tick(){
+ if(!run)return;
+ const s=run.show,now=performance.now();
+ advanceAutomatically(now);
+ const clock=run.state==='ready'?null:run.state==='paused'?run.pausedAt:run.state==='done'?run.endedAt:now;
+ const real=clock===null?0:Math.max(0,Math.floor((clock-run.start)/1000));
+ const idx=run.idx,done=idx>=s.items.length,it=s.items[idx];
+ const itemElapsed=run.state==='ready'?0:done?0:Math.max(0,Math.floor((clock-run.itemStart)/1000));
+ const remaining=s.items.slice(idx).reduce((n,x)=>n+safeSeconds(x.sec),0),all=total(s);
+ $('realTime').textContent='REÁLNE '+fmt(real);
+ $('currentName').textContent=done?'KONIEC SETU':it.name||'BEZ NÁZVU';
+ $('currentTimer').textContent=done?'0:00':fmt(Math.max(0,safeSeconds(it.sec)-itemElapsed));
+ $('currentTimer').classList.remove('over');
+ $('stage').classList.toggle('paused',run.state==='paused');
+ $('tapHint').textContent=run.state==='ready'?'KLEPNI NA NÁZOV ALEBO ČAS PRE ŠTART':run.state==='paused'?'POZASTAVENÉ · KLEPNI PRE POKRAČOVANIE':run.state==='done'?'KONCERT UKONČENÝ':'KLEPNI NA NÁZOV ALEBO ČAS PRE PAUZU';
+ $('stagePosition').textContent=done?'HOTOVO':(idx+1)+' / '+s.items.length;
+ $('stageRemaining').textContent=fmt(remaining);
+ $('stageBar').style.width=(all?100*(all-remaining)/all:100)+'%';
+ $('nextStage').textContent=done?'HOTOVO':'ĎALŠIA →';$('nextStage').disabled=done;
+ if(run.renderedIdx!==idx){
+   let queue=$('stageQueue');queue.replaceChildren();
+   s.items.forEach((x,i)=>{
+     let q=el('button','queue-item'+(i===idx?' current':''),(i+1)+'. '+(x.name||'BEZ NÁZVU')+' · '+fmt(x.sec));
+     q.type='button';q.setAttribute('aria-label','PREJSŤ NA '+(x.name||'POLOŽKU'));
+     q.setAttribute('aria-current',i===idx?'step':'false');
+     q.onclick=()=>jumpToItem(i);
+     queue.append(q);
+   });
+   const active=queue.children[idx];
+   if(active){const horizontal=getComputedStyle(queue).flexDirection!=='column';
+     if(horizontal)queue.scrollLeft=Math.max(0,active.offsetLeft-queue.offsetLeft-12);
+     else queue.scrollTop=Math.max(0,active.offsetTop-queue.offsetTop-12);
+   }
+   run.renderedIdx=idx;
+ }
+}
+function jumpToItem(index){
+ if(!run||index<0||index>=run.show.items.length)return;
+ const now=performance.now();
+ if(run.state==='running')advanceAutomatically(now);
+ // A selection starts the chosen item from its full planned duration.
+ // Keep the real clock independent, even when jumping backwards.
+ if(run.state==='ready'){
+   run.start=now;run.state='running';
+ }else if(run.state==='done'){
+   // Resuming after the end continues the original real elapsed clock.
+   run.start+=(now-run.endedAt);run.state='running';
+ }else if(run.state==='paused'){
+   run.start+=now-run.pausedAt;run.state='running';
+ }
+ run.idx=index;run.itemStart=now;run.renderedIdx=-1;
+ tick();
+}
+// Keep the display awake while LIVE is visible, where supported.
+let wakeLock=null;
+let wakeRequestId=0;
+function wakeStatus(message,kind=''){
+ const node=$('wakeStatus');node.textContent='DISPLEJ: '+message;node.className='wake-status '+kind;
+}
+async function acquireWakeLock(){
+ if(!run||!$('stage').classList.contains('on')||document.visibilityState!=='visible')return;
+ if(wakeLock&&!wakeLock.released){wakeStatus('ZAPNUTÝ','ok');return;}
+ if(!('wakeLock' in navigator)||!window.isSecureContext){wakeStatus('NEPODPOROVANÉ','fail');return;}
+ const request=++wakeRequestId;
+ try{
+   const lock=await navigator.wakeLock.request('screen');
+   if(request!==wakeRequestId||!run||!$('stage').classList.contains('on')){await lock.release();return;}
+   wakeLock=lock;wakeStatus('ZAPNUTÝ','ok');
+   lock.addEventListener('release',()=>{
+     if(wakeLock!==lock)return;
+     wakeLock=null;
+     if(run&&$('stage').classList.contains('on'))wakeStatus('UVOĽNENÝ','fail');
+   });
+ }catch(err){if(request===wakeRequestId)wakeStatus('NEDOSTUPNÝ','fail');}
+}
+function releaseWakeLock(){
+ wakeRequestId++;
+ const lock=wakeLock;wakeLock=null;
+ if(lock&&!lock.released)lock.release().catch(()=>{});
+ wakeStatus('VYPNUTÝ');
+}
+function startConcert(){
+ let s=show();if(!s?.items.length)return alert('PRIDAJ DO SETLISTU ASPOŇ JEDNU POLOŽKU.');
+ let snap=JSON.parse(JSON.stringify(s));
+ run={show:snap,idx:0,state:'ready',start:null,itemStart:null,renderedIdx:-1};
+ $('stageEvent').textContent=[s.name,s.place].filter(Boolean).join(' • ');
+ $('app').classList.add('hidden');$('stage').classList.add('on');
+ acquireWakeLock();
+ tick();clearInterval(ticker);ticker=setInterval(tick,150);
+}
+$('startShow').onclick=startConcert;
+$('stageTap').onclick=toggleStage;
+$('stageTap').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleStage()}};
+$('nextStage').onclick=()=>{
+ if(!run||run.idx>=run.show.items.length)return;
+ const now=performance.now();
+ if(run.state==='running')advanceAutomatically(now);
+ if(run.idx>=run.show.items.length){tick();return}
+ run.idx++;run.renderedIdx=-1;
+ if(run.state==='running')run.itemStart=now;
+ else if(run.state==='paused')run.itemStart=run.pausedAt;
+ if(run.idx>=run.show.items.length){const wasPaused=run.state==='paused';run.endedAt=wasPaused?run.pausedAt:now;run.state='done';}
+ tick();
+};
+// V3.4: LOCAL BACKUP / RESTORE
+function validBackup(data){
+ if(!data||typeof data!=='object'||!Array.isArray(data.songs)||!Array.isArray(data.shows))return false;
+ if(data.songs.length>20000||data.shows.length>5000)return false;
+ const str=x=>typeof x==='string'&&x.length<=2000;
+ if(!data.songs.every(x=>x&&str(x.id)&&str(x.name)&&Number.isFinite(x.sec)&&x.sec>=0&&x.sec<=86400))return false;
+ return data.shows.every(x=>x&&str(x.id)&&str(x.name)&&str(x.place)&&Array.isArray(x.items)&&x.items.length<=2000&&x.items.every(i=>i&&str(i.id)&&str(i.name)&&(i.kind==='song'||i.kind==='break')&&Number.isFinite(i.sec)&&i.sec>=0&&i.sec<=86400&&(i.songId===undefined||str(i.songId))));
+}
+$('exportBackup').onclick=()=>{
+ try{
+ const payload={format:'koncertny-timer-backup',version:1,exportedAt:new Date().toISOString(),songs:db.songs,shows:db.shows};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='koncertny-timer-zaloha-'+new Date().toISOString().slice(0,10)+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);
+ $('backupStatus').textContent='ZÁLOHA PRIPRAVENÁ NA STIAHNUTIE. ULOŽ JU NA BEZPEČNÉ MIESTO.';
+ }catch(e){alert('EXPORT SA NEPODARIL: '+e.message)}
+};
+$('importBackup').onclick=()=>$('backupFile').click();
+$('backupFile').onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+ if(file.size>10*1024*1024)throw Error('SÚBOR JE PRÍLIŠ VEĽKÝ.');
+ const data=JSON.parse(await file.text());
+ if(data.format!=='koncertny-timer-backup'||data.version!==1||!validBackup(data))throw Error('NEPLATNÁ ALEBO NEPODPOROVANÁ ZÁLOHA.');
+ if(!confirm('IMPORT NAHRADÍ VŠETKY TERAZ ULOŽENÉ SKLADBY A KONCERTY. PRED POKRAČOVANÍM ODPORÚČAME EXPORTOVAŤ AKTUÁLNU ZÁLOHU. POKRAČOVAŤ?'))return;
+ const restored={songs:data.songs,shows:data.shows};
+ // Commit to storage first; never discard current in-memory data if storage fails.
+ localStorage.setItem(KEY,JSON.stringify(restored));db=restored;activeShow=null;page('library');
+ $('backupStatus').textContent='OBNOVENÉ: '+db.songs.length+' SKLADIEB A '+db.shows.length+' SETLISTOV.';
+ alert('ZÁLOHA BOLA ÚSPEŠNE OBNOVENÁ.');
+ }catch(err){alert('IMPORT SA NEPODARIL: '+err.message)}finally{e.target.value=''}
+};
+// After rotating the phone, the queue changes from horizontal to vertical (or back).
+// Re-align the currently playing song without restarting or changing the timers.
+let queueAlignTimer;
+function alignActiveQueue(){
+ if(!run||!$('stage').classList.contains('on'))return;
+ const queue=$('stageQueue'),active=queue.children[run.idx];
+ if(!active)return;
+ const vertical=getComputedStyle(queue).flexDirection==='column';
+ if(vertical){queue.scrollTop=Math.max(0,active.offsetTop-queue.offsetTop-12);queue.scrollLeft=0;}
+ else{queue.scrollLeft=Math.max(0,active.offsetLeft-queue.offsetLeft-12);queue.scrollTop=0;}
+}
+function scheduleQueueAlign(){
+ if(!run)return;
+ requestAnimationFrame(()=>requestAnimationFrame(alignActiveQueue));
+ clearTimeout(queueAlignTimer);
+ queueAlignTimer=setTimeout(alignActiveQueue,180);
+}
+window.addEventListener('resize',scheduleQueueAlign);
+window.addEventListener('orientationchange',scheduleQueueAlign);
+$('exitStage').onclick=()=>{if(!confirm('UKONČIŤ KONCERTNÝ REŽIM?'))return;clearInterval(ticker);ticker=null;releaseWakeLock();run=null;$('stage').classList.remove('on','paused');$('app').classList.remove('hidden');page('preview')};document.addEventListener('visibilitychange',()=>{if(run){tick();if(document.visibilityState==='visible')acquireWakeLock();}});page('library');
+})();</script><script>
+if ('serviceWorker' in navigator && window.isSecureContext) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Offline cache unavailable:', err)));
+}
+</script></body></html>
